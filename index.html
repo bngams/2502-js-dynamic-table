@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajouter une Ligne au Tableau</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Ajouter une ligne au tableau</h1>
+    <form id="add-row-form" class="inline-form">
+      <label for="firstname">Prénom:</label>
+      <input type="text" id="firstname" name="firstname" placeholder="John" minlength="2" required>
+      
+      <label for="lastname">Nom:</label>
+      <input type="text" id="lastname" name="lastname" placeholder="Doe" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+      
+      <button type="submit" id="add-row">Ajouter</button>
+    </form>
+
+    <table id="usersTable">
+      <thead>
+        <tr>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Les lignes ajoutées apparaîtront ici -->
+      </tbody>
+    </table>
+
+    <script src="main.js"></script>
+  </div>
+</body>
+</html>
+
