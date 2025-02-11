@@ -1,4 +1,11 @@
-let users = [];
+// entetes js
+import { handleFormSubmit } from "submit.js";
+import { axios } from "node_modules/axios/dist/axios.js";
+
+let users = [
+  {},
+  {},
+];
 
 document.addEventListener("DOMContentLoaded", async () => {
   await loadDataFromDummyjson(); // Appeler la fonction pour charger les données
@@ -7,15 +14,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function loadDataFromDummyjson() {
-  try {
-    const response = await fetch("https://dummyjson.com/users?limit=10");
-    if(response.ok) {
-      const data = await response.json();
-      users = data.users;
-    }
-  } catch (error) {
-    console.error(error);
-  }
+  const response = await fetch("https://dummyjson.com/users?limit=10");
+  const data = await response.json();
+  /* for (user of data.users) {
+    users.push({ firstname: user.name, lastname: user.fullName, email: user.email });
+  } */
+  users = data.users.map((user) => ({
+    firstname: user.firstName,
+    lastname: user.lastName,
+    email: user.email,
+  }));
 }
 
 async function loadDataFromJsonPlaceholder() {
@@ -77,15 +85,4 @@ function addRowInsertRow(firstname, lastname, email) {
   tr.insertCell().textContent = firstname;
   tr.insertCell().textContent = lastname;
   tr.insertCell().textContent = email;
-}
-
-function handleFormSubmit() {
-  document.querySelector("#add-row-form").addEventListener("submit", (event) => {
-    event.preventDefault(); // Empêche le rechargement de la page lors du submit
-    // Récupérer les données du formulaire
-    const formData = new FormData(event.target);
-    // TODO: Ajouter la ligne au json...
-    // Ajouter une nouvelle ligne au tableau en appelant addRow
-    addRow(formData.get("firstname"), formData.get("lastname"), formData.get("email"));
-  });
 }

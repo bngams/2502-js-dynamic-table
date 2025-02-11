@@ -1,0 +1,23 @@
+{
+  "name": "table-form-json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bngams/2502-js-dynamic-table.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bngams/2502-js-dynamic-table/issues"
+  },
+  "homepage": "https://github.com/bngams/2502-js-dynamic-table#readme",
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
+}
