@@ -1,11 +1,8 @@
 // entetes js
-import { handleFormSubmit } from "submit.js";
-import { axios } from "node_modules/axios/dist/axios.js";
+import { handleFormSubmit } from "./submit.js";
+// import { axios } from "node_modules/axios/dist/axios.js";
 
-let users = [
-  {},
-  {},
-];
+let users = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
   await loadDataFromDummyjson(); // Appeler la fonction pour charger les données
